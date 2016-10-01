@@ -1,0 +1,37 @@
+Connecting to C:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.21 released November 30, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 9 tinySQL tables in this directory.
+tinySQL>COLN_NAME_VERSN                                              TRACK_NAME                                                  TRACK_LEN    
+============================================================ =========================================================== ============ 
+Please Please Me                               UK            I Saw Her Standing There                                    2.83         
+Please Please Me                               UK            Misery                                                      1.72         
+Please Please Me                               UK            Anna (Go To Him)                                            2.93         
+Please Please Me                               UK            Chains                                                      2.35         
+Please Please Me                               UK            Boys                                                        2.4          
+Please Please Me                               UK            Ask Me Why                                                  2.4          
+Please Please Me                               UK            Please Please Me                                            2.0          
+Please Please Me                               UK            Love Me Do                                                  2.32         
+Please Please Me                               UK            P.S. I Love You                                             2.03         
+Please Please Me                               UK            Baby, It's You                                              2.6          
+Please Please Me                               UK            Do You Want To Know A Secret                                1.92         
+Please Please Me                               UK            A Taste Of Honey                                            2.03         
+Please Please Me                               UK            There's a Place                                             1.73         
+With the Beatles                               UK            It Won't Be Long                                            2.18         
+With the Beatles                               UK            All I've Got To Do                                          2.08         
+With the Beatles                               UK            All My Loving                                               2.07         
+With the Beatles                               UK            Don't Bother Me                                             2.47         
+With the Beatles                               UK            Little Child                                                1.77         
+With the Beatles                               UK            Till There Was You                                          2.2          
+With the Beatles                               UK            Please Mr. Postman                                          2.57         
+With the Beatles                               UK            Roll Over Beethoven                                         2.73         
+With the Beatles                               UK            Hold Me Tight                                               2.5          
+With the Beatles                               UK            You Really Got A Hold On Me                                 2.97         
+With the Beatles                               UK            I Wanna Be Your Man                                         1.98         
+With the Beatles                               UK            Devil In Her Heart                                          2.38         
+With the Beatles                               UK            Not A Second Time                                           2.05         
+With the Beatles                               UK            Money (That's What I Want)                                  2.78         
+tinySQL>

@@ -1,0 +1,40 @@
+Connecting to C:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.21 released November 30, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 9 tinySQL tables in this directory.
+tinySQL>COLN_NAME                                      EVENT_DATE EVENT_DESC                                                                       
+============================================== ========== ================================================================================ 
+Let It Be                                      1970-05-18 Released                                                                         
+Let It Be                                      1970-05-26 US Gold                                                                          
+The Beatles 1967-1970                          1973-04-02 Released                                                                         
+The Beatles 1962-1966                          1973-04-02 Released                                                                         
+The Early Beatles                              1974-01-08 US Gold                                                                          
+Meet the Beatles                               1991-12-26 US Platinum                                                                      
+Something New                                  1991-12-26 US Platinum                                                                      
+Beatles '65                                    1991-12-26 US Platinum                                                                      
+"Yesterday" ... And Today                      1991-12-26 US Platinum                                                                      
+Revolver                                       1991-12-26 US Platinum                                                                      
+Sgt. Pepper's Lonely Hearts Club Band          1991-12-26 US Platinum                                                                      
+Magical Mystery Tour                           1991-12-26 US Platinum                                                                      
+The Beatles (The White Album)                  1991-12-26 US Platinum                                                                      
+Yellow Submarine                               1991-12-26 US Platinum                                                                      
+Abbey Road                                     1991-12-26 US Platinum                                                                      
+Hey Jude                                       1991-12-26 US Platinum                                                                      
+The Beatles 1967-1970                          1991-12-26 US Platinum                                                                      
+The Beatles 1962-1966                          1991-12-26 US Platinum                                                                      
+The Beatles Second Album                       1997-01-10 US Platinum                                                                      
+The Early Beatles                              1997-01-10 US Platinum                                                                      
+Beatles VI                                     1997-01-10 US Platinum                                                                      
+Help                                           1997-01-10 US Platinum                                                                      
+Let It Be                                      1997-01-10 US Platinum                                                                      
+The Beatles (The White Album)                  2000-07-25 US Diamond                                                                       
+The Beatles 1967-1970                          2000-07-25 US Diamond                                                                       
+The Beatles 1962-1966                          2000-07-25 US Diamond                                                                       
+The Beatles - 1                                2000-11-14 Released                                                                         
+The Beatles - 1                                2000-12-15 US Gold                                                                          
+The Beatles - 1                                2000-12-15 US Platinum                                                                      
+Let It Be - Naked                              2003-11-17 Released                                                                         
+tinySQL>

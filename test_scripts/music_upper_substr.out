@@ -1,0 +1,11 @@
+Connecting to C:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.21 released November 30, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 9 tinySQL tables in this directory.
+tinySQL>upper(substr(max(artst_name),2,8)) 
+================================== 
+HE ROLLI                           
+tinySQL>

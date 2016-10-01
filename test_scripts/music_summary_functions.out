@@ -1,0 +1,40 @@
+Connecting to C:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.21 released November 30, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 9 tinySQL tables in this directory.
+tinySQL>SELECT 'Artst ID value range: '||MIN(ARTST_ID)||' to '||MAX(ARTST_ID) FROM MUSIC_ARTISTS
+CONCAT('Artst ID value range: ',MIN(ARTST_ID),' to ',MAX(ARTST_ID)) 
+=================================================================== 
+Artst ID value range: 1 to 4                                        
+SELECT 'Artists Count: '||COUNT(*) FROM MUSIC_ARTISTS
+CONCAT('Artists Count: ',COUNT(*)) 
+================================== 
+Artists Count: 4                   
+SELECT ARTST_NAME FROM MUSIC_ARTISTS WHERE ARTST_NAME LIKE 'The%'
+ARTST_NAME                                                   
+============================================================ 
+The Beatles                                                  
+The Rolling Stones                                           
+SELECT 'Count with The: '||COUNT(*) FROM MUSIC_ARTISTS WHERE ARTST_NAME LIKE 'The%'
+CONCAT('Count with The: ',COUNT(*)) 
+=================================== 
+Count with The: 2                   
+SELECT 'Count ARTST_ID  > 999: '||COUNT(*) FROM MUSIC_ARTISTS WHERE ARTST_ID > 999
+CONCAT('Count ARTST_ID > 999: ',COUNT(*)) 
+========================================= 
+Count ARTST_ID > 999: 0                   
+SELECT MIN(ARTST_NAME),MAX(ARTST_NAME) FROM MUSIC_ARTISTS WHERE ARTST_ID>1
+MIN(ARTST_NAME)                                              MAX(ARTST_NAME)                                              
+============================================================ ============================================================ 
+Jimmy Eat World                                              The Rolling Stones                                           
+SELECT 'Count Ziggy: '||COUNT(*) FROM MUSIC_ARTISTS WHERE ARTST_NAME='Ziggy Stardust'
+CONCAT('Count Ziggy: ',COUNT(*)) 
+================================ 
+Count Ziggy: 0                   
+SELECT 'Event Date Range: ',min(event_date),max(event_date),to_date('15-sep-6') from music_events
+'Event Date Range: ' min(event_date) max(event_date) to_date('15-sep-6') 
+==================== =============== =============== =================== 
+Event Date Range:    1962-01-24      2003-11-17      2006-09-15          

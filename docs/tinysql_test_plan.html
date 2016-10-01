@@ -1,0 +1,70 @@
+<h3>Test Plan for tinySQL</h3>
+Author: Davis Swan
+<br>Date: December 17, 2004
+<br>Revision: 1.0
+<p>
+
+The functionality of tinySQL can be tested using the scripts in the test_scripts
+sub-directory and the data files in the music.zip archive.  Unzipping this
+archive will produce the following tinySQL table files;
+<p>
+MUSIC_ARTISTS.DBF
+<br>MUSIC_COLLECTIONS.DBF
+<br>MUSIC_TRACKS.DBF
+<br>MUSIC_COLLECTION_TRACKS.DBF
+<br>MUSIC_COLLECTION_LOCS.DBF
+<br>MUSIC_LOCATIONS.DBF
+<br>MUSIC_EVENTS.DBF
+<br>MUSIC_LYRICS.DBF
+<p>
+This is a fully normalized database which contains information on most
+of the songs and collections produced by The Beatles.
+<p>
+To launch tinySQL, use the command <code>java -jar ..\classes\tinySQL.jar</code> (MS Windows)
+or <code>java -jar ../classes/tinySQL.jar</code> (Unix/Linux) from
+the test_scripts directory.  This will start the tinySQL command line SQL processor.
+<p>
+Connect to the directory where the music DBF files are located.  For example, 
+if they are in the directory c:\music on an MS Windows computer,
+then the correct command would be <code>connect c:\music</code>.  If they
+are in the Unix/Linux directory /home/music then
+the correct command would be <code>connect /home/music</code>.
+<p>
+A message will be displayed indicating that there
+are 8 tinySQL tables in the directory.
+<p>
+<b>Unit Tests:</b> If code is changed in order to fix a bug or implement new 
+functionality, then a new test script should be created using the music database
+to verify that the
+changed code is working properly.  This script should contain only the 
+relevant SQL statement or statements that will demonstrate the result of 
+any changes.  The unit test script can be tested by using the
+command <code>start unit_test_script.sql</code>
+<p>
+<b>Regression Tests:</b> Once the unit tests work properly, then the full
+set of test scripts should be run in order to confirm that the software
+changes have not had unwanted side effects on core tinySQL functionality.
+Each of the test script files can be run using the start command.  The output
+from each test script has been saved as a .out file.  Comparing the contents
+of these files with the output generated when the tests are run will 
+provide confirmation that the core functionality of tinySQL is still working
+properly after any software changes that are made.
+<p>
+Regression tests typically have some inter-dependence because some of the
+test scripts will modify the state of the database.  As of December, 2004
+the only script which does this is music_update_delete.sql.  The script 
+music_recreate_artists.sql should always be run after music_update_delete.sql
+in order to restore the database to its initial state.
+<p>
+After making any change to a source file simply run <code>make</code>
+(from the source directory) to regenerate the tinySQL.jar file.  There are
+situations where make will fail if you introduce a new class that has
+complex interdependencies with other classes.  In this case running 
+<code>make compile</code>
+should build all of the class files and the tinySQL.jar file.
+<p>
+If you are working on an MS Windows machine you can use the make that is 
+contained in the UnixUtils.zip file available under "Free Resources"
+at www.sqlmagic.com.
+<p>
+If you have any questions or suggestions you can send them to Davis@sqlmagic.com.

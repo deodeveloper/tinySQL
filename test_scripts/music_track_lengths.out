@@ -1,0 +1,11 @@
+Connecting to D:\tinySQL-2\test_scripts\.
+There are no tinySQL tables in this directory.
+===========================================
+tinySQL Command line interface version 2.0
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 8 tinySQL tables in this directory.
+tinySQL>Track Length Summary                                                               
+================================================================================== 
+Track lengths are 0.38 to 8.25. Sum of track lengths is 581.7601                   
+tinySQL>

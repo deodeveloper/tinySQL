@@ -1,0 +1,12 @@
+Connecting to D:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.21 released November 30, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 12 tinySQL tables in this directory.
+tinySQL>Connecting to c:\tpak
+There are 12 tinySQL tables in this directory.
+max(inj_month) min(inj_month) to_date('30-Nov-6') 
+============== ============== =================== 
+2006-08-15     2006-08-15     2006-11-30          

@@ -1,0 +1,26 @@
+Connecting to D:\tinySQL-2\test_scripts\.
+There are no tinySQL tables in this directory.
+===========================================
+tinySQL Command line interface version 2.0
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 8 tinySQL tables in this directory.
+tinySQL>DONE
+
+DONE
+
+DONE
+
+DONE
+
+DONE
+
+DONE
+
+ARTST_ID   ARTST_NAME                                                   
+========== ============================================================ 
+1          The Beatles                                                  
+2          The Rolling Stones                                           
+3          Red Hot Chili Peppers                                        
+4          Jimmy Eat World                                              
+tinySQL>

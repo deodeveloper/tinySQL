@@ -1,0 +1,34 @@
+Connecting to D:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.21 released November 30, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 12 tinySQL tables in this directory.
+tinySQL>DONE
+
+tinySQL>drop table longtest
+Exception: Table LONGTEST does not exist.
+create table longtest (shortcol char(12),longcolumnname7 char(27))
+DONE
+
+insert into longtest (longcolumnname7) values ('start with nothing')
+DONE
+
+select * from longtest
+SHORTCOL     LONGCOLUMNNAME7             
+============ =========================== 
+             start with nothing          
+describe longtest
+
+Columns for table LONGTEST
+Name                            Type
+SHORTCOL                        CHAR(12)            1           
+LONGCOLUMNNAME7                 CHAR(27)            1           
+update longtest set longcolumnname7='Davis' where TRIM(longcolumnname7)='start with nothing'
+DONE
+
+select * from longtest
+SHORTCOL     LONGCOLUMNNAME7             
+============ =========================== 
+             Davis                       

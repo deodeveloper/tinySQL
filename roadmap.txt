@@ -1,0 +1,10 @@
+Development Roadmap for tinySQL
+
+The major areas for development with tinySQL will be;
+
+1) Performance improvements.  This will involve cutting down the number of 
+records scanned by building a Hashtable of simplified keys based upon a 
+specific where clause.
+
+2) Addition of more function support, JOIN clause (currently implemented as
+part of WHERE clause processing).

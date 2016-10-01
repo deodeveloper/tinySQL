@@ -1,0 +1,1 @@
+select a.coln_name,b.event_date,b.event_desc from music_collections a,music_events b where a.coln_id=b.obj_id and b.obj_type=5 and b.event_date > to_date('15-may-70') order by b.event_date;

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>tinySQLWhere Detailed Design</title>
+</head>
+<body>
+<span style="font-weight: bold;">Detailed Design Document for the new
+tinySQLWhere Class</span><br>
+<br>
+<span style="text-decoration: underline;">Introduction</span><br>
+<br>
+Where clause processing in tinySQL is currently done after a complete
+record is ready for output.&nbsp; For multi-table joins tinySQL may
+have to scan thousands of rows in order to build the candidate record,
+only to find that the first where clause fails.&nbsp; This makes the
+process very inefficient for even small databases.&nbsp; <br>
+<br>
+Where clause processing in tinySQL uses an if then else mthodology to
+handle individual column=condition elements in the where clause.&nbsp;
+This makes it difficult to process complex where clauses and virtually
+impossible to implement and/or combinations.<br>
+<br>
+<br>
+<span style="text-decoration: underline;">Code Structure and Components<br>
+<br>
+</span>A new tinySQLWhere class will be developed which will centralize
+all of the processing of where clauses for tinySQL.&nbsp; Where clause
+parsing code will be part of the tinySQLWhere constructor, which will
+be instantiated by tinySQLParser when a WHERE clause is
+encountered.&nbsp; <br>
+<br>
+This code will produce a whereClausList Vector.&nbsp; Each element of
+the whereClauseList is itself a Vector containing elements which are
+either whereConditions or new tinySQLWhere objects. <br>
+<br>
+Each whereCondition is a Vector containing the following 8 elements;<br>
+<br>
+<div style="margin-left: 40px;">0&nbsp;&nbsp; The type of phrase -
+currently always JOIN<br>
+1&nbsp;&nbsp; The name of the left side of the condition, usually a
+column name or function<br>
+2&nbsp;&nbsp; The types of condition (=, !=, like)<br>
+3&nbsp;&nbsp; The right side of the condition, a column or constant<br>
+4&nbsp;&nbsp; The type of the left side of the condition (INT, FLOAT,
+CHAR, DATE)<br>
+5&nbsp;&nbsp; The current value of the left side of the condition<br>
+6&nbsp;&nbsp; The type of the right side of the condition (INT, FLOAT,
+CHAR, DATE)<br>
+7&nbsp;&nbsp; The current value of the right side of the condition<br>
+8&nbsp;&nbsp; The current state of the entire whereCondition - TRUE,
+FALSE, or UNKNOWN<br>
+</div>
+&nbsp; <br>
+The implementation of recursive parsing will allow nested where clauses
+such as in the example below;<br>
+<br style="font-family: monospace;">
+<span style="font-family: monospace;"><span
+ style="color: rgb(0, 0, 153);">select column1 from table1 where
+column1=condition1 and (column2=condition2 or (column3=condition3 and
+column4=condition4))</span>;<br>
+<br>
+</span>The whereClauseList for the above where clause is a Vector
+containing a single element, having the following structure;<br>
+<br>
+whereClauseList element 0&nbsp; is a Vector containing 2 elements; <br>
+<ol>
+  <li>the whereCondition column1=condition1</li>
+  <li>a tinySQLWhere object for the portion of the where clause in
+brackets.&nbsp; This object will have a whereClauseList consisting of 2
+elements</li>
+  <ol>
+    <li>The first element will be a Vector having a single element, the
+whereCondition column2=condition2</li>
+    <li>The 2nd element will be a Vector having 2 elements;&nbsp; the
+whereConditions column3=condition3 and column4=condition4<br>
+    </li>
+  </ol>
+</ol>
+This structure will allow the following simple rules to apply when the
+where clause is being evaluated;<br>
+<ul>
+  <li>If any part of a whereCondition is false, the entire
+whereCondition is false;</li>
+</ul>
+<ul>
+  <li>If any element of the whereClauseList is true, the entire
+whereClause is true</li>
+</ul>
+In the example listed above, if column1 != condition1, the entire where
+clause is false.&nbsp; If column2=condition2, then the tinySQLWhere
+object that represents the portion of the where clause in brackets is
+TRUE.<br>
+<br>
+The tinySQLWhere class will have a method named evaluate which will
+take a column name and value as arguments.&nbsp; This method will then
+scan all the elements of the whereClauseList and will recursively
+evaluate the conditions.&nbsp; Using the rules listed above, the where
+clause as a whole will be evaulated with as little column information
+as possible.<br>
+<br>
+The tinySQLWhere class will have a clearValues method which will reset
+all of the values in the whereConditions to null in order to start
+processing a new row.<br>
+<br>
+<span style="text-decoration: underline;"></span>
+</body>
+</html>

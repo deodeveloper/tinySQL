@@ -1,0 +1,12 @@
+Connecting to D:\tinySQL-2\test_scripts\.
+There are no tinySQL tables in this directory.
+===========================================
+tinySQL Command line interface version 2.0
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 8 tinySQL tables in this directory.
+tinySQL>ARTST_ID   TRACK_LEN    TRACK_ID   TRACK_NAME                                                  
+========== ============ ========== =========================================================== 
+1          4.27         145        Come together                                               
+1          3.07         151        Here comes the sun                                          
+tinySQL>

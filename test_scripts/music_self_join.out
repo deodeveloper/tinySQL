@@ -1,0 +1,31 @@
+Connecting to C:\tinySQL-2\classes\.
+There are no tinySQL tables in this directory.
+===================================================
+tinySQL Command line interface version 2.26 released December 6, 2006
+Type HELP to get information on available commands.
+tinySQL>Connecting to c:\tpak
+There are 10 tinySQL tables in this directory.
+ARTST_NAME                                   ARTST_NAME                                   
+============================================ ============================================ 
+The Beatles                                  The Band                                     
+The Doobie Brothers                          The Band                                     
+The Doobie Brothers                          The Beatles                                  
+The Doors                                    The Band                                     
+The Doors                                    The Beatles                                  
+The Doors                                    The Doobie Brothers                          
+The Mamas and the Papas                      The Band                                     
+The Mamas and the Papas                      The Beatles                                  
+The Mamas and the Papas                      The Doobie Brothers                          
+The Mamas and the Papas                      The Doors                                    
+The Strokes                                  The Band                                     
+The Strokes                                  The Beatles                                  
+The Strokes                                  The Doobie Brothers                          
+The Strokes                                  The Doors                                    
+The Strokes                                  The Mamas and the Papas                      
+The Supremes                                 The Band                                     
+The Supremes                                 The Beatles                                  
+The Supremes                                 The Doobie Brothers                          
+The Supremes                                 The Doors                                    
+The Supremes                                 The Mamas and the Papas                      
+The Supremes                                 The Strokes                                  
+tinySQL>

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Coding Standards for tinySQL</title>
+</head>
+<body>
+<span style="font-weight: bold;">Coding Standards for tinySQL</span><br>
+Author: Davis Swan<br>
+Date: December&nbsp; 12, 2004<br>
+Revision: 1.0<br>
+<br>
+The application of coding standards to an application makes the code
+much easier to read, even if the style is not something a particular
+developer is familiar with.&nbsp; The fact that all modules follow the
+standard will make code analysis and future developments easier.<br>
+<br>
+The following coding standards should be followed for any new modules
+written for tinySQL, and should be retro-actively applied to modules
+that are being extensively modified.&nbsp; In some cases, such as
+tsResultSet, this effort would be quite time-consuming and can be
+deferred until a later date.<br>
+<br>
+Good examples of&nbsp; classes that fully comply with the coding
+standards include tinySQLParser.java, tinySQLWhere.java, and
+FieldTokenizer.java.<br>
+<br>
+Note that the existing code, some of which dates back 8 years, does not
+adhere to these standards in all cases.&nbsp; In particular, there are
+a few very large classes that need to be modularized and reformatted.<br>
+<br>
+New classes or changes that do not conform to these standards will have
+to be re-written before they will be included in an "authorized"
+release of tinySQL.<br>
+<br>
+<ul>
+  <li>Source code files should not exceed 500 lines of code, and should
+contain clear internal documentation for each major block of code.</li>
+</ul>
+<ul>
+  <li>Variable names should follow the normal Java standard of
+nameSubnameSubname and should be intuitive.&nbsp; For example,
+columnName or dotAt.&nbsp; Iterators in for loops should be one letter
+variables such as i, j, k.&nbsp; Variables should be declared at the
+beginning of code blocks and not in-line to avoid scope issues, as
+shown below;</li>
+</ul>
+<div style="margin-left: 40px;"><span
+ style="font-family: monospace; color: rgb(0, 0, 153);">int i;</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">for ( i =
+0; i &lt; imax; i++ )&nbsp;&nbsp; </span><br>
+<br>
+is preferable to <br>
+<span style="font-family: monospace; color: rgb(0, 0, 153);">for (int i
+= 0; i &lt; imax; i++ )</span></div>
+<ul>
+  <li>Code blocks should be indented using 3 spaces (no tabs - they
+don't look the same in different editors).&nbsp; The opening and
+closing curly brackets should be on new lines.&nbsp; Intermediate
+blocks within an <span style="font-family: monospace;">if else</span>
+block should have curly brackets on the same line, as shown below;<span
+ style="font-family: monospace;">&nbsp; </span></li>
+</ul>
+<div style="margin-left: 40px;"><span
+ style="font-family: monospace; color: rgb(0, 0, 153);">if ( condition1
+) </span><br style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">{</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+executable code;</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">} else if
+( condition 2) {</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+executable code;</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">}</span><br>
+</div>
+<br>
+<ul>
+  <li>Comments should&nbsp; have * in column 2 and comment text should
+be indented to match the code block.&nbsp; See the example below;</li>
+</ul>
+<div style="margin-left: 40px;"><span
+ style="font-family: monospace; color: rgb(0, 0, 153);">public class
+newClass</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">{ </span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">/*</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;*
+Comments about the constructor</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;*/&nbsp;
+</span><br style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+public newClass(String argString)</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+{</span><br style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">/*</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;*&nbsp;&nbsp;&nbsp;
+Comments about the following block of executable code.</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;*/</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Executable code;</span><br
+ style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+}</span><br style="font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">}</span><br>
+</div>
+<ul>
+  <li>Classes should always have a toString() method that produces an
+easy to understand display of the main class fields. </li>
+</ul>
+<ul>
+  <li>Classes should generally not define public fields which can be
+used or changed in other classes.&nbsp; Explicit get/set methods are
+preferable.</li>
+</ul>
+<ul>
+  <li>All major changes to the tinySQL code should have a detailed
+design document which is reviewed before coding begins.&nbsp;
+Examin the <a href="tinySQLWhereDesign.html">tinySQLWhere</a> class
+document as an example.</li>
+</ul>
+<ul>
+  <li>When new functionality is added to tinySQL a test script
+should be created as described in the 
+<a href="tinysql_test_plan.html">tinySQL Test Plan</a>
+to demonstrate that the software works properly using the
+MUSIC database tables. </li>
+</ul>
+<ul>
+  <li>A make file is included with the tinySQL source code that will
+update the tinySQL.jar file by compiling only those classes that have
+been changed.&nbsp; If a new class is written it should be added to the
+list of objects in the makefile.&nbsp; If you are developing on a
+Windows platform, you can get access to make by downloading the Unix
+Utilities for Windows file which is available at www.sqlmagic.com.<br>
+  </li>
+</ul>
+Comments or suggestions for changes to these coding standards should be
+seent to davis@sqlmagic.com.<br>
+</body>
+</html>
